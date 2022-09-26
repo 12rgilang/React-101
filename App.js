@@ -5,10 +5,20 @@ import './App.css';
 // for importing package from react
 import React from 'react';
 
+
+// pseudo coding lesson
 class StarWars extends React.Component {
   render() {
     return (
-      <h1>This is StarWars Randomize Character Project</h1>
+      <div>
+        <h1>Name</h1>
+        <p>Height cm</p>
+        <p>Homeworld: URL</p>
+        <ul>
+          <li>Films in here</li>
+        </ul>
+        <button type="button" className="btn">Randomize Character</button>
+      </div>
     )
   }
 }
