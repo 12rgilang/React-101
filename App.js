@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Item from './MyItem';
 
-// working with React.js click events
+// working with React.js state
 function App() {
   return (
     <div className="App">
