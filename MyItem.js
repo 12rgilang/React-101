@@ -10,7 +10,7 @@ class Item extends React.Component{
 
     render() {
         return(
-            // (=> to executed) "()events"
+            // its mean (=> to executed) "()events" 
             <h5 onClick={() => this.clickMe()}>Heloo iam Gilang Ramadhan i learning this courses via {this.props.courses}</h5>
         )
     }
