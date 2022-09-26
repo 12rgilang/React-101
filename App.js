@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Item from './MyItem';
+// import Item from './MyItem';
 
-// working with React.js state
+// for importing package from react
+import React from 'react';
+
+class StarWars extends React.Component {
+  render() {
+    return (
+      <h1>This is StarWars Randomize Character Project</h1>
+    )
+  }
+}
+
+// working with React.js Randomize Character Project
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Item courses="Udemy"/>
-        <Item courses="Purwadhika"/>
-        <Item courses="Ruang Guru"/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React 101
-        </a>
+        <StarWars />
       </header>
     </div>
   );
