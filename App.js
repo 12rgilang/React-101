@@ -6,7 +6,7 @@ import './App.css';
 import React from 'react';
 
 
-// React.js IF statements
+// React.js Based API request
 class StarWars extends React.Component {
   constructor() {
     super()
@@ -20,13 +20,17 @@ class StarWars extends React.Component {
   }
 
   getNewCharacter() {
-    console.log("Get new character from a button")
-    this.setState({
-      name: null,
-      height: null,
-      homeworld: null,
-      films: ['item 1', 'item 2'],
-      loadedCharacter: true,
+    const url = "https://swapi.dev/api/people/1/"
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          name: data.name,
+          height: data.height,
+          homeworld: data.homeworld,
+          films: data.films,
+          loadedCharacter: true,
+        })
     })
   }
 
