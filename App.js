@@ -6,7 +6,18 @@ import './App.css';
 import React from 'react';
 
 
-// React.js Based API request randomize Character
+//making new class for item row
+class FilmItemRow extends React.Component {
+  render() {
+    return (
+      <li>
+        <a href={this.props.url}>{this.props.url}</a>
+      </li>
+    )
+  }
+}
+
+// React.js create a link and how to loop(mapping) in React
 class StarWars extends React.Component {
   constructor() {
     super()
@@ -36,6 +47,11 @@ class StarWars extends React.Component {
   }
 
   render() {
+    // every item in the list needs a key exp i&url and i stands for index
+    const movies = this.state.films.map((url, i) => {
+      return <FilmItemRow key={i} url={url} />
+    })
+
     return (
       <div>
         {
@@ -43,9 +59,9 @@ class StarWars extends React.Component {
             <div>
               <h1>{this.state.name}</h1>
               <p>{this.state.height} cm</p>
-              <p>Homeworld: {this.state.homeworld}</p>
+              <p><a href={this.state.homeworld}>Homeworld</a></p>
               <ul>
-                <li>{this.state.films}</li>
+                {movies}
               </ul>
             </div>
         }
