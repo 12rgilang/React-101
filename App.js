@@ -6,19 +6,36 @@ import './App.css';
 import React from 'react';
 
 
-// React Click Feature
+// Storing State on computer
 class StarWars extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      name: null,
+      height: null,
+      homeworld: null,
+      films: [],
+    }
+  }
+
   getNewCharacter() {
     console.log("Get new character from a button")
+    this.setState({
+      name: null,
+      height: null,
+      homeworld: null,
+      films: ['item 1', ['item 2']],
+    })
   }
+
   render() {
     return (
       <div>
-        <h1>Name</h1>
-        <p>Height cm</p>
-        <p>Homeworld: URL</p>
+        <h1>{this.state.name}</h1>
+        <p>{this.state.height} cm</p>
+        <p>Homeworld: {this.state.homeworld}</p>
         <ul>
-          <li>Films in here</li>
+          <li>{this.state.films}</li>
         </ul>
         <button 
         type="button" 
