@@ -6,8 +6,11 @@ import './App.css';
 import React from 'react';
 
 
-// pseudo coding lesson
+// React Click Feature
 class StarWars extends React.Component {
+  getNewCharacter() {
+    console.log("Get new character from a button")
+  }
   render() {
     return (
       <div>
@@ -17,7 +20,13 @@ class StarWars extends React.Component {
         <ul>
           <li>Films in here</li>
         </ul>
-        <button type="button" className="btn">Randomize Character</button>
+        <button 
+        type="button" 
+        onClick={() => this.getNewCharacter()} 
+        className="btn"
+        >
+          Randomize Character
+        </button>
       </div>
     )
   }
