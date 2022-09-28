@@ -6,7 +6,7 @@ import './App.css';
 import React from 'react';
 
 
-//making new class for item row
+//Final Project React 101
 class FilmItemRow extends React.Component {
   render() {
     return (
@@ -49,7 +49,7 @@ class StarWars extends React.Component {
   render() {
     // every item in the list needs a key exp i&url and i stands for index
     const movies = this.state.films.map((url, i) => {
-      return <FilmItemRow key={i} url={url} />
+      return <FilmItemRow key={i} url={url}/>
     })
 
     return (
