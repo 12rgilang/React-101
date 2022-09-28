@@ -6,11 +6,12 @@ import './App.css';
 import React from 'react';
 
 
-// Storing State on computer
+// React.js IF statements
 class StarWars extends React.Component {
   constructor() {
     super()
     this.state = {
+      loadedCharacter: false,
       name: null,
       height: null,
       homeworld: null,
@@ -24,19 +25,26 @@ class StarWars extends React.Component {
       name: null,
       height: null,
       homeworld: null,
-      films: ['item 1', ['item 2']],
+      films: ['item 1', 'item 2'],
+      loadedCharacter: true,
     })
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
-        <p>{this.state.height} cm</p>
-        <p>Homeworld: {this.state.homeworld}</p>
-        <ul>
-          <li>{this.state.films}</li>
-        </ul>
+        {
+          this.state.loadedCharacter &&
+            <div>
+              <h1>{this.state.name}</h1>
+              <p>{this.state.height} cm</p>
+              <p>Homeworld: {this.state.homeworld}</p>
+              <ul>
+                <li>{this.state.films}</li>
+              </ul>
+            </div>
+        }
+
         <button 
         type="button" 
         onClick={() => this.getNewCharacter()} 
